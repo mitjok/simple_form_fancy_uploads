@@ -4,6 +4,7 @@ module SimpleFormFancyUploads
       out = ''
       if object.send("#{attribute_name}?")
         out << template.link_to(object.send(attribute_name).file.filename, object.send(attribute_name).url)
+        out << " "
       end
       (out << super).html_safe
     end
